@@ -1,9 +1,9 @@
 const http = require('http')
-// const fs = require('fs')
+const fs = require('fs')
 
-// const htmlData = fs.readFileSync('index.html')
+const htmlData = fs.readFileSync('index.html')
 const server = http.createServer((req, res)=>{
-    res.end('Captain America: Avengers Assemble Why? Not!')
+    res.end(htmlData)
 })
 
 server.listen(3000,()=>{
