@@ -7,21 +7,15 @@ const rl = readline.createInterface({
     input:process.stdin,
     output:process.stdout
 })
-let num1;
-let num2;
- rl.question('Enter the first number: ',(numx)=>{
-    num1 = Number(numx);
-    rl.question('Enter the second number: ',(numy)=>{
-        num2 = Number(numy);
-        if(num1 > num2){
-            console.log(`the maximum of two number is: ${num1}`)
-        }else if(num1 < num2){
-            console.log(`the maximum of two number is: ${num2}`)
-        } else{
-            console.log('Invalid Number')
-        }
+ rl.question('Enter two number seprated by space: ',(input)=>{
+    const numbers = input.split(' ').map(Number);
+    if(numbers.length === 2 && !isNaN(numbers[0]) && !isNaN(numbers[1])){
+        const max = Math.max(numbers[0],numbers[1])
+        console.log(`The maximum of two numbers is: ${max}`)
+    }else{
+        console.log('Invalid Numbers, please enter a valid two number')
+    }
         rl.close();
-    })
  })
 
 
